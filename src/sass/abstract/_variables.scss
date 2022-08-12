@@ -1,0 +1,35 @@
+// Colors
+
+$clr-primary-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+$clr-primary-300: hsl(0, 100%, 66%);
+
+$clr-neutral-100: hsl(0, 0%, 100%);
+$clr-neutral-200: hsl(270, 3%, 87%);
+$clr-neutral-500: hsl(279, 6%, 55%);
+$clr-neutral-800:hsl(278, 68%, 11%);
+
+// Colors Abstracted
+$clr-border: $clr-primary-gradient;
+$clr-body: $clr-neutral-500;
+$clr-primary-heading: $clr-neutral-800; // Maybe?
+$clr-errors: $clr-primary-300;
+$clr-background: $clr-neutral-100;
+
+// Font Families
+
+$ff-primary: 'Roboto Slab', serif;
+$ff-secondary: 'Space Grotesk', sans-serif;
+
+// Font Family Abstracted
+
+$ff-body: $ff-primary;
+$ff-primary-heading: $ff-secondary;
+
+
+// Font Weights
+
+$fw-500: 500;
+
+// Font Weights Abstracted 
+
+$fw-regular: $fw-500;

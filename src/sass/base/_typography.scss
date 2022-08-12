@@ -1,0 +1,6 @@
+@use '../abstract/variables' as *;
+
+body {
+    font-family: $ff-body;
+    color: $clr-body;
+}
