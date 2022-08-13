@@ -15,50 +15,32 @@
 <body>
   <main>
     <div class="container">
-      <picture>
-        <source srcset="./assets/images/bg-main-desktop.png" media="(min-width:  1440px)">
-        <source srcset="./assets/images/bg-main-mobile.png" media="(min-width:  375px)">
-        <img src="./assets/images/bg-main-mobile.png">
-      </picture>
-      <div class="card-back-container">
-        <img src="./assets/images/bg-card-back.png" alt="back of credit card image">
-        <div class="card-back-details">
-            000
-        </div>
+      <div class="left-side">
+
+        <picture> 
+          <source srcset="./assets/images/bg-main-desktop.png" media="(min-width:  1440px)">
+          <source srcset="./assets/images/bg-main-mobile.png" media="(min-width:  375px)">
+          <img src="./assets/images/bg-main-mobile.png">
+        </picture>
+
       </div>
+      <div class="right-side">
+        <form class="card-info-form">
+          <label for="name">CARDHOLDER</label>
+          <input type="text" name="name" placeholder="e.g. Jane Appleseed">
+          <label for="number">CARD NUMBER</label>
+          <input  type="text"  name="number" placeholder="e.g. 12345678 9123 0000">
+          <label for="exp">EXP. DATE (MM/YY)</label>
+            <input type="text" name="month" placeholder="MM">
+            <input type="text" name="year" placeholder="YY">
+            <label for="cvc">CVC</label>
+            <input type="text" name="cvc" placeholder="e.g 123">
+          <button type="submit">Confirm</button>
+        </form>
+    </div>
 
-      <div class="card-front-container">
-        <img src="./assets/images/bg-card-front.png" alt="front of credit card image">
-        <div class="card-front-details">
-          <div class="card-number-container">
-            0000 0000 0000 0000
-          </div>
-          <div class="card-name-container">
-            Jane Appleseed
-          </div>
-          <div class="card-exp-container">
-            00/00
-          </div>
-        </div>
-      </div>
 
 
-      <form class="card-info-form">
-        <label for="name">CARDHOLDER</label>
-        <input type="text" name="name" placeholder="e.g. Jane Appleseed">
-        <label for="number">CARD NUMBER</label>
-        <input  type="text"  name="number" placeholder="e.g. 12345678 9123 0000">
-        <label for="exp">EXP. DATE (MM/YY)</label>
-        <div class="row">
-          <input type="text" name="month" placeholder="MM">
-          <input type="text" name="year" placeholder="YY">
-          <label for="cvc">CVC</label>
-          <input type="text" name="cvc" placeholder="e.g 123">
-        </div>
-        <button type="submit">Confirm</button>
-      </form>
-
-  </div>
 </main>
 </body>
 </html>
