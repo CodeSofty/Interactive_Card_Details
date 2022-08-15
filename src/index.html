@@ -16,16 +16,18 @@
   <main>
     <div class="container">
       <div class="left-side">
+        <div class="grid">
+          <picture> 
+            <source srcset="./assets/images/bg-main-desktop.png" media="(min-width:  1440px)">
+            <source srcset="./assets/images/bg-main-mobile.png" media="(min-width:  375px)">
+            <img src="./assets/images/bg-main-mobile.png">
+          </picture>
 
-        <picture> 
-          <source srcset="./assets/images/bg-main-desktop.png" media="(min-width:  1440px)">
-          <source srcset="./assets/images/bg-main-mobile.png" media="(min-width:  375px)">
-          <img src="./assets/images/bg-main-mobile.png">
-        </picture>
+          <div class="img-container">
+            <img src="./assets/images/bg-card-back.png" class="card-img-back">
+            <img src="./assets/images/bg-card-front.png" class="card-img-front">
+          </div>
 
-        <div class="img-container">
-          <img src="./assets/images/bg-card-front.png" class="card-img-front">
-          <img src="./assets/images/bg-card-back.png" class="card-img-back">
         </div>
 
       </div>
