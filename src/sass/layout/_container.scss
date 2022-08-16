@@ -40,6 +40,16 @@ picture {
     left: 0;
     z-index: -1000;
 }
+.cvc-number {
+    position: absolute;
+}
+
+
+.front-details {
+    position: absolute;
+
+}
+
 
 @media (min-width: 1440px) {
     .container {
