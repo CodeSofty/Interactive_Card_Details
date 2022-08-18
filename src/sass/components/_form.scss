@@ -1,4 +1,18 @@
+@use '../abstract/variables' as *;
+
 .card-info-form {
     display: flex;
     flex-direction: column;
 }
+
+form input {
+    border: $clr-neutral-200 1.5px solid;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+form label {
+    font-family: $ff-primary-heading;
+    font-weight: $fw-regular;
+    color: $clr-neutral-800;
+} 
