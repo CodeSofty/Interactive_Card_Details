@@ -11,7 +11,7 @@
 .img-container {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
     z-index: 1000;
 }
@@ -22,7 +22,6 @@
     grid-column: 1/3;
     grid-row: 2/4;
     margin-top: 35px;
-
 }
 
 .card-img-back {
@@ -41,18 +40,32 @@ picture {
 }
 
 
-.cvc-number {
-    position: absolute;
-}
-
 
 .front-details {
     position: absolute;
-    bottom: 0;
-
+    top: 60px;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    gap: 10px;
 }
 
-.front-details, .cvc-number {
+.front-details > * {
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.row-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-logo {
+    width: 20%;
+}
+
+.front-details{
     letter-spacing: $ls-card-details;
 }
 

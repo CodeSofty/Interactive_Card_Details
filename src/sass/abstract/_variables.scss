@@ -31,11 +31,16 @@ $fw-regular: $fw-500;
 
 // Font Size
 
+$fs-100: .625rem;
+$fs-300: 1rem;
 $fs-400: 1.125rem;
+
 
 // Font Size Abstracted
 
+$fs-card-x-small: $fs-100;
 $fs-body: $fs-400;
+$fs-card-small: $fs-300;
 
 // Letter Spacing
 $ls-500: 2px;
