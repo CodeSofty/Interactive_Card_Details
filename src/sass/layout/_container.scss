@@ -8,6 +8,7 @@
 }
 
 
+
 .img-container {
     position: relative;
     display: grid;
@@ -100,56 +101,31 @@ picture {
 
     .container {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(6, 1fr);
         height: 100vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+
+
+        grid-template-areas: 
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
+        "sidebar main main main"
     }
 
-    picture {
-        top: 0;
-        bottom: 0;
-        right: 30%;
-
+    
+    .right-side {
+        grid-area: main;
     }
+
     .left-side {
-        grid-column: 2/6;
-        grid-row: 6;
+        grid-area: sidebar;
         padding: 10px;
-        background: blue;
+        background-image: url('./assets/images/bg-main-mobile.png');
     }
 
     .img-container {
         grid-template-columns: repeat(12, 1fr);
     }
 
-    .card-img-back {
-        margin-top: 56px;
-        grid-column: 2/-1;
-        grid-row: 1;
-        position: relative;
-        z-index: -100;
-        margin-left: 100px;
-        margin-top: 250px;
-    
-    }
-    
-
-    .card-img-front {
-        grid-column: 2/-1;
-        grid-row: 1;
-        margin-left: 20px;
-    }
-
-    .front-details {
-        top: 0;
-        left: 30%;
-    }
-
-    
-
-    .right-side {
-        background-color: green;
-        width: 40%;
-        margin: auto;
-    }
 }
