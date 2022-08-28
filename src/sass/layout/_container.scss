@@ -7,6 +7,9 @@
     padding: 0 10px;
 }
 
+.left-side {
+    background-image: url('/assets/images/bg-main-mobile.png');
+}
 
 
 .img-container {
@@ -125,14 +128,12 @@ picture {
     .left-side {
         grid-area: sidebar;
         padding: 10px;
-        background-image: url('./assets/images/bg-main-mobile.png');
-        background-color: red;
+        background-image: url('/assets/images/bg-main-desktop.png');
         width: 100%;
     }
 
     .img-container {
         grid-template-columns: repeat(4, 1fr);
-        background-color: blue;
         height: 100%;
         align-items: center;
         justify-items: center;
