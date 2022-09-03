@@ -28,7 +28,12 @@ function updateElementText(str, element_name){
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let messages = [];
-    console.log(messages);
+                // if(element.validity.valid) {
+                //element.textContent =""; // Reset the content of the message
+                // element.className = "error" // reset the visual state of the message
+            //} else {
+                //showError();
+           // }
 });
 
 
