@@ -31,15 +31,21 @@ form.addEventListener('submit', (e) => {
 
 });
 
+const cardholder_name = document.getElementById('cardholder_name_input');
+const card_number = document.getElementById('card_number_input');
+const card_exp_month = document.getElementById('card_exp_month_input');
+const card_exp_year = document.getElementById('card_exp_year_input');
+const card_cvc = document.getElementById('card_cvc_input');
+
 function checkInputs() {
-    let cardholder_name = document.getElementById('cardholder_name_input').value.trim();
-    let card_number = document.getElementById('card_number_input').value.trim();
-    let card_exp_month = document.getElementById('card_exp_month_input').value.trim();
-    let card_exp_year = document.getElementById('card_exp_year_input').value.trim();
-    let card_cvc = document.getElementById('card_cvc_input').value.trim();
+    const cardholder_name_value = document.getElementById('cardholder_name_input').value.trim();
+    const card_number_value = document.getElementById('card_number_input').value.trim();
+    const card_exp_month_value = document.getElementById('card_exp_month_input').value.trim();
+    const card_exp_year_value = document.getElementById('card_exp_year_input').value.trim();
+    const card_cvc_value = document.getElementById('card_cvc_input').value.trim();
 
 
-    if(cardholder_name === '') {
+    if(cardholder_name_value === '') {
         // Show Error 
         setErrorFor(cardholder_name, 'Cardholder name cannot be blank');
     }
@@ -49,9 +55,11 @@ function setErrorFor(input, message) {
     const formControl = input.parentElement;
     const errorMessage = formControl.querySelector('span');
 
+
     // Add error message inside span
 
-    errorMessage.value = message;
+    errorMessage.textContent = message;
+
 }
 
 
