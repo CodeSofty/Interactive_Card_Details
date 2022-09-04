@@ -31,13 +31,16 @@ form.addEventListener('submit', (e) => {
 
 });
 
-const cardholder_name = document.getElementById('cardholder_name_input');
-const card_number = document.getElementById('card_number_input');
-const card_exp_month = document.getElementById('card_exp_month_input');
-const card_exp_year = document.getElementById('card_exp_year_input');
-const card_cvc = document.getElementById('card_cvc_input');
+// DOM Elements
+    const cardholder_name = document.getElementById('cardholder_name_input');
+    const card_number = document.getElementById('card_number_input');
+    const card_exp_month = document.getElementById('card_exp_month_input');
+    const card_exp_year = document.getElementById('card_exp_year_input');
+    const card_cvc = document.getElementById('card_cvc_input');
 
 function checkInputs() {
+// Input Values
+
     const cardholder_name_value = document.getElementById('cardholder_name_input').value.trim();
     const card_number_value = document.getElementById('card_number_input').value.trim();
     const card_exp_month_value = document.getElementById('card_exp_month_input').value.trim();
@@ -45,26 +48,51 @@ function checkInputs() {
     const card_cvc_value = document.getElementById('card_cvc_input').value.trim();
 
 
+    checkForBlanks(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value);
+
+}
+
+
+function checkForBlanks(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value) {
+
     if(cardholder_name_value === '') {
         // Show Error 
-        setErrorFor(cardholder_name, 'Cardholder name cannot be blank');
+        setErrorFor(cardholder_name, "Can't be blank");
     }
+
+    if(card_number_value  === '') {
+        // Show Error 
+        setErrorFor(card_number, "Can't be blank");
+    }
+
+    if(card_exp_month_value  === '') {
+        // Show Error 
+        setErrorFor(card_exp_month, "Can't be blank");
+    }
+
+    if(card_exp_year_value  === '') {
+        // Show Error 
+        setErrorFor(card_exp_year, "Can't be blank");
+    }
+
+    if(card_cvc_value  === '') {
+        // Show Error 
+        setErrorFor(card_cvc, "Can't be blank");
+    } 
 }
+
 
 function setErrorFor(input, message) {
     const formControl = input.parentElement;
     const errorMessage = formControl.querySelector('span');
 
-
     // Add error message inside span
-
     errorMessage.textContent = message;
 
 }
 
 
 // - Receive error messages when the form is submitted if:
-//   - Any input field is empty
-//   - The card number, expiry date, or CVC fields are in the wrong format
+//   - The card number, expiry date, or CVC fields are in the wrong format ([0-9]+( [0-9]+)+)
 // - See hover, active, and focus states for interactive elements on the page
 
