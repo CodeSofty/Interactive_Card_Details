@@ -27,17 +27,32 @@ function updateElementText(str, element_name){
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    let messages = [];
-                // if(element.validity.valid) {
-                //element.textContent =""; // Reset the content of the message
-                // element.className = "error" // reset the visual state of the message
-            //} else {
-                //showError();
-           // }
+    checkInputs();
+
 });
 
+function checkInputs() {
+    let cardholder_name = document.getElementById('cardholder_name_input').value.trim();
+    let card_number = document.getElementById('card_number_input').value.trim();
+    let card_exp_month = document.getElementById('card_exp_month_input').value.trim();
+    let card_exp_year = document.getElementById('card_exp_year_input').value.trim();
+    let card_cvc = document.getElementById('card_cvc_input').value.trim();
 
 
+    if(cardholder_name === '') {
+        // Show Error 
+        setErrorFor(cardholder_name, 'Cardholder name cannot be blank');
+    }
+}
+
+function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const errorMessage = formControl.querySelector('span');
+
+    // Add error message inside span
+
+    errorMessage.value = message;
+}
 
 
 // - Receive error messages when the form is submitted if:
