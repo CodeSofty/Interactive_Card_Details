@@ -49,6 +49,7 @@ function checkInputs() {
 
 
     checkForBlanks(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value);
+    checkFormatting(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value);
 
 }
 
@@ -80,6 +81,13 @@ function checkForBlanks(cardholder_name_value, card_number_value, card_exp_month
         setErrorFor(card_cvc, "Can't be blank");
     } 
 }
+
+
+
+function checkFormatting(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value) {
+    console.log('formatted');
+};
+
 
 
 function setErrorFor(input, message) {
