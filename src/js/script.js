@@ -48,13 +48,15 @@ function checkInputs() {
     const card_cvc_value = document.getElementById('card_cvc_input').value.trim();
 
 
-    checkForBlanks(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value);
-    checkFormatting(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value);
+    checkForErrors(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value);
 
 }
 
 
-function checkForBlanks(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value) {
+function checkForErrors(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value) {
+
+    const primaryNum_regex = /([0-9]+( [0-9]+)+)/;
+    const secondaryNum_regex = /[0-9]+.*[0-9]+/;
 
     if(cardholder_name_value === '') {
         // Show Error 
@@ -64,29 +66,43 @@ function checkForBlanks(cardholder_name_value, card_number_value, card_exp_month
     if(card_number_value  === '') {
         // Show Error 
         setErrorFor(card_number, "Can't be blank");
+    } else if(primaryNum_regex.test(card_number_value)) {
+        console.log('card number entered successfully');
+    } else {
+        setErrorFor(card_number, "Incorrect format");
     }
 
     if(card_exp_month_value  === '') {
         // Show Error 
         setErrorFor(card_exp_month, "Can't be blank");
+    } else if(secondaryNum_regex.test(card_exp_month_value)) {
+        console.log('expiraton month entered successfully');
+    } else {
+        setErrorFor(card_exp_month, "Incorrect format");
+        console.log('incorrect format');
     }
 
     if(card_exp_year_value  === '') {
         // Show Error 
         setErrorFor(card_exp_year, "Can't be blank");
+    } else if(secondaryNum_regex.test(card_exp_year_value)) {
+        console.log('expiration year entered successfully');
+    } else {
+        setErrorFor(card_exp_year, "Incorrect format");
+        console.log('incorrect format');
     }
 
     if(card_cvc_value  === '') {
         // Show Error 
         setErrorFor(card_cvc, "Can't be blank");
-    } 
+    } else if(secondaryNum_regex.test(card_cvc_value)) {
+        console.log('cvc entered successfully');
+    } else {
+        setErrorFor(card_cvc, "Incorrect format");
+        console.log('incorrect format');
+    }
 }
 
-
-
-function checkFormatting(cardholder_name_value, card_number_value, card_exp_month_value, card_exp_year_value, card_cvc_value) {
-    console.log('formatted');
-};
 
 
 
