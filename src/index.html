@@ -28,7 +28,7 @@
                 <div class="card-number fs-small" id="card_number">0000 0000 000 0000</div>
                 <div class="row-wrapper small-font-detail-wrapper"> 
                   <div class="card-name fs-x-small cardholder_name" id="cardholder_name">Jane Appleseed</div>
-                  <div class="card-exp fs-x-small card_exp_date" id="card_exp_date">00/<span class="card-exp fs-x-small card_exp_date">00</span></div>
+                  <div class="card-exp fs-x-small card_exp_date"><span id="card_exp_month">00</span>/<span class="card-exp fs-x-small" id="card_exp_year">00</span></div>
                 </div>
               </div>
             </div>
@@ -39,13 +39,17 @@
         <form action="/" method="GET" class="card-info-form" id="userSubmissionForm">
           <div class="form-control"> 
             <label for="name">CARDHOLDER</label>
-            <input class="cardholder_name_input"  id="cardholder_name_input" type="text" name="name" placeholder="e.g. Jane Appleseed" onkeyup="updateElementText(this.value, 'cc_name')" >
-            <span class="text-error-300 fs-x-small error" aria-live="polite"></span>
+            <div class="column"> 
+              <input class="cardholder_name_input"  id="cardholder_name_input" type="text" name="name" placeholder="e.g. Jane Appleseed" onkeyup="updateElementText(this.value, 'cc_name')" >
+              <span class="text-error-300 fs-x-small error" aria-live="polite"></span>
+            </div>
           </div>
           <div class="form-control"> 
             <label for="number">CARD NUMBER</label>
-            <input class="card_number_input" id="card_number_input" type=”number” name="number" placeholder="e.g. 12345678 9123 0000" placeholder="e.g. Jane Appleseed" onkeyup="updateElementText(this.value, 'cc_number')" maxlength="20">
-            <span class="text-error-300 fs-x-small error" aria-live="polite"></span>
+            <div class="column">
+              <input class="card_number_input" id="card_number_input" type=”number” name="number" placeholder="e.g. 12345678 9123 0000" placeholder="e.g. Jane Appleseed" onkeyup="updateElementText(this.value, 'cc_number')" maxlength="20">
+              <span class="text-error-300 fs-x-small error" aria-live="polite"></span>
+            </div>
           </div>
 
             
@@ -53,16 +57,20 @@
               <div class="input-box">
                 <div class="form-control"> 
                   <label for="card_exp">EXP. DATE (MM/YY)</label>
-                  <input class="card_exp_month_input" id="card_exp_month_input" type=”number”  name="month" placeholder="MM" maxlength="2" >
-                  <input class="card_exp_year_input" id="card_exp_year_input" type=”number”  name="year" placeholder="YY" maxlength="2" >
-                  <span class="text-error-300 fs-x-small error" aria-live="polite"></span>
+                  <input class="card_exp_month_input" id="card_exp_month_input" type=”number”  name="month" placeholder="MM" maxlength="2" onkeyup="updateElementText(this.value, 'exp_month')" >
+                  <input class="card_exp_year_input" id="card_exp_year_input" type=”number”  name="year" placeholder="YY" maxlength="2" onkeyup="updateElementText(this.value, 'exp_year')">
+                  <div class="column"> 
+                    <span class="text-error-300 fs-x-small error" aria-live="polite"></span>
+                  </div>
                 </div>
               </div>
               <div class="input-box"> 
                 <div class="form-control"> 
                   <label for="cvc">CVC</label>
-                  <input class="cvc-input card_cvc_input" id="card_cvc_input" type=”number”  name="cvc" placeholder="e.g 123" placeholder="e.g. Jane Appleseed" onkeyup="updateElementText(this.value, 'cc_cvc')" maxlength="3" >
-                  <span class="text-error-300 fs-x-small error" aria-live="polite"></span>
+                  <div class="column"> 
+                    <input class="cvc-input card_cvc_input" id="card_cvc_input" type=”number”  name="cvc" placeholder="e.g 123" placeholder="e.g. Jane Appleseed" onkeyup="updateElementText(this.value, 'cc_cvc')" maxlength="3" >
+                    <span class="text-error-300 fs-x-small error" aria-live="polite"></span>
+                  </div>
                 </div>
               </div> 
             </div> 

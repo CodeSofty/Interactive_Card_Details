@@ -7,11 +7,34 @@
     margin: 2rem auto;
 }
 
+
+
+form {
+    width: 50%;
+
+    & .form-control:last-child {
+        margin-bottom: 20px;
+    }
+}
+
 form input {
     border: $clr-neutral-200 1.5px solid;
     padding: 5px;
     border-radius: 5px;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+        border: 2px solid hsl(278, 94%, 30%);
+    }
+}
+
+
+.form_error {
+    border: 2px solid $clr-primary-300;
 }
 
 form label {
@@ -19,3 +42,24 @@ form label {
     font-weight: $fw-regular;
     color: $clr-neutral-800;
 } 
+
+
+.input-box  label {
+    display: block;
+}
+
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.input-row  input{
+    width: 25%;
+}
+
+.input-row .cvc-input {
+    width: 100%
+}
+

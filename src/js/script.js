@@ -2,7 +2,6 @@
 
 
 const form = document.getElementById('userSubmissionForm');
-let cc_exp_date_el = document.querySelector('#card_exp_date').textContent;
 
 
 // Update UI Elements in Real-Time
@@ -19,6 +18,14 @@ function updateElementText(str, element_name){
 
         case 'cc_cvc':
             document.querySelector('#card_cvc').textContent = str;
+            break;
+
+        case 'exp_month':
+            document.querySelector('#card_exp_month').textContent = str;
+            break;
+
+        case 'exp_year':
+            document.querySelector('#card_exp_year').textContent = str;
             break;
     }
 }
@@ -69,7 +76,7 @@ function checkForErrors(cardholder_name_value, card_number_value, card_exp_month
     } else if(primaryNum_regex.test(card_number_value)) {
         console.log('card number entered successfully');
     } else {
-        setErrorFor(card_number, "Incorrect format");
+        setErrorFor(card_number, "Wrong format, numbers only");
     }
 
     if(card_exp_month_value  === '') {
@@ -78,7 +85,7 @@ function checkForErrors(cardholder_name_value, card_number_value, card_exp_month
     } else if(secondaryNum_regex.test(card_exp_month_value)) {
         console.log('expiraton month entered successfully');
     } else {
-        setErrorFor(card_exp_month, "Incorrect format");
+        setErrorFor(card_exp_month, "Wrong format, numbers only");
         console.log('incorrect format');
     }
 
@@ -88,7 +95,7 @@ function checkForErrors(cardholder_name_value, card_number_value, card_exp_month
     } else if(secondaryNum_regex.test(card_exp_year_value)) {
         console.log('expiration year entered successfully');
     } else {
-        setErrorFor(card_exp_year, "Incorrect format");
+        setErrorFor(card_exp_year, "Wrong format, numbers only");
         console.log('incorrect format');
     }
 
@@ -98,7 +105,7 @@ function checkForErrors(cardholder_name_value, card_number_value, card_exp_month
     } else if(secondaryNum_regex.test(card_cvc_value)) {
         console.log('cvc entered successfully');
     } else {
-        setErrorFor(card_cvc, "Incorrect format");
+        setErrorFor(card_cvc, "Wrong format, numbers only");
         console.log('incorrect format');
     }
 }
@@ -112,6 +119,10 @@ function setErrorFor(input, message) {
 
     // Add error message inside span
     errorMessage.textContent = message;
+
+    // Add error class
+
+    input.classList.add("form_error");
 
 }
 
